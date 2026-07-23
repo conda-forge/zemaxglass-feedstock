@@ -13,7 +13,7 @@ source:
   sha256: cb88f633b37cda6e583e00ec1e6f87d1f4b53a8695142cf9357e7496349bddf0
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -41,6 +41,12 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
+
+outputs:
+  - name: zemaxglass
+    files:
+      include:
+        "AGF_files/*"
 
 about:
   summary: Zemax glass (.agf) file reader
